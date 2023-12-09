@@ -1,0 +1,102 @@
+/Q.1 Write a Program to create a class to read and add two distances./
+#include<iostream>
+using namespace std;
+class Distance{
+	public:
+	int feets,inchs;
+	
+	void input()
+	{
+		cout<<"Enter Feet and Inch : ";
+		cin>>feets>>inchs;
+	}
+	void add(Distance d1,Distance d2)
+	{
+		feets=d1.feets+d2.feets;
+		inchs=d1.inchs+d2.inchs;
+		if (inchs >= 12) 
+		{
+            feets =feets+inchs/12;
+            inchs =inchs%12;
+        }
+	}
+	
+	void output()
+	{
+		cout<<"Total :"<<feets<<" Feet "<<inchs<<" Inch";
+	}
+	
+};
+ int main()
+ {
+ 	Distance input1,input2,total;
+ 	input1.input();
+ 	input2.input();
+ 	total.add(input1,input2);
+ 	total.output();
+ }
+
+
+/Q.2 Write a Program to read time in seconds and convert it into time in (HH:MM:SS) format./
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int scnd;
+    cout << "Enter seconds : ";
+    cin >> scnd;
+
+    int hur, mnt;
+    hur = scnd / 3600;  
+    scnd = scnd % 3600;
+    mnt = scnd / 60;  
+    scnd = scnd % 60;
+
+    cout << "Output : " << endl << "Time :" << hur << ":" << mnt << ":" << scnd << endl;
+
+    return 0;
+}
+
+
+
+/Q.3 WAP to create a class which Read and Print House details along with Room details./
+
+#include<iostream>
+using namespace std;
+class Housedtails{
+		int husno,room,inch,size;
+		string husname,colour;
+	public :
+		void setdata()
+		{
+			cout<< endl << endl << "Enter your HouseName : ";
+			cin>>husname;
+			cout<< "Enter your HouseNo. : ";
+			cin>>husno;
+			cout<< "Enter House inch : ";
+			cin>>inch;
+			cout << "Enter the Number of Rooms: ";
+        	cin >>room;
+			cout<< "Enter Room size : ";
+			cin>>size;
+			cout<< "Enter House color: ";
+			cin>>colour;
+		}
+		void getdata()
+		{
+			cout<< endl << "House Name : "<<husname<<endl;
+			cout<<"House No. : "<<husno<<endl;
+			cout<<"House inch : "<<inch<<endl;
+			cout<<"Total Rooms: "<<room<<endl;
+			cout<<"Room Size : "<<size<<endl;
+			cout<<"Room Color : "<<colour<<endl<<endl;
+		}
+};
+int main()
+{
+	Housedtails d1;
+	d1.setdata();
+	d1.getdata();	
+}
