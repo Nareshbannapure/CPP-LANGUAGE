@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+
+class Hotel{
+	
+	private:
+		int hotel_id;
+		static string hotel_name;
+		string hotel_type;
+		int hotel_rating;
+		string hotel_location;
+		int hotel_establish_year;
+		int hotel_staff_quantity;
+		int hotel_room_quantity;
+		
+		
+	public:
+		
+	    void setData()
+		{
+			cout << " Enter Hotel ID : ";
+			cin >> hotel_id;
+			cout << " Enter Hotel Type : ";
+			cin >> hotel_type;
+			cout << " Enter Hotel Rating : ";
+			cin >> hotel_rating;
+			cout << " Enter Hotel Location : ";
+			cin >> hotel_location;
+			cout << " Enter Hotel Year : ";
+			cin >> hotel_establish_year;
+			cout << " Enter Hotel Staff Quantity : ";
+			cin >> hotel_staff_quantity;
+			cout << " Enter Hotel Room Quantity : ";
+			cin >> hotel_room_quantity;
+	    }
+	    
+	    static void table()
+	    {
+	    	cout << endl << endl << "\t\t\t\t\t\tHotel Details" << endl << endl;
+	    	cout << "-------------------------------------------------------------------------------------------------" << endl;
+	    	cout << "ID \tName \t\tType \tRating \tLocation \tYear \tStaff QTY \tRoom QTY" << endl;
+	    	cout << "--------\t--------\t--------\t------\t-------\t------\t-------\t" << endl;
+		}
+	    
+	    void getData()
+	    {
+	    	cout << hotel_id <<"\t"<< hotel_name <<"\t"<< hotel_type <<"\t"<< hotel_rating <<"\t"<< hotel_location <<"\t\t"<< hotel_establish_year <<"\t"<< hotel_staff_quantity <<"\t\t"<< hotel_room_quantity << endl;
+		}
+};
+
+string Hotel::hotel_name = "Bhagavti";
+
+int main()
+{
+	int n;
+	
+	cout << "Enter Number of Hotel : ";
+	cin >> n;
+	
+	Hotel h1[n];
+	
+	for(int i=0;i<n;i++)
+	h1[i].setData();
+	
+	Hotel::table();
+	
+	for(int i=0;i<n;i++)
+	h1[i].getData();
+	
+}
