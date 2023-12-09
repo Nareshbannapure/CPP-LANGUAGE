@@ -1,0 +1,79 @@
+Q.1 Write a Program to find the sum of all three number’s cubes by implementing
+single-level inheritance: Class X->Class Y
+
+#include<iostream>
+using namespace std;
+class X
+{
+protected :
+int a,b,c;
+};
+class Y : protected X
+{
+public :
+void setdataY()
+{
+cout << "Enter value of a: ";
+cin >> a;
+cout << "Enter value of b: ";
+cin >> b;
+cout << "Enter value of c: ";
+cin >> c;
+}
+void getdataY()
+{
+cout << endl << "Cube of a: " << a << "^3 = " << a*a*a << endl;
+cout << "Cube of b: " << b << "^3 = " << b*b*b << endl;
+cout << "Cube of c: " << c << "^3 = " << c*c*c << endl;
+cout << "sum of all three number's cubes: " << a*a*a+b*b*b+c*c*c;
+}
+};
+int main()
+{
+Y y1;
+y1.setdataY();
+y1.getdataY();
+}
+
+Q.2 Write a Program to convert a given degree Celsius temperature into Fahrenheit and
+convert that Fahrenheit temperature into Kelvin by implementing multilevel inheritance:
+Class P -> Class Q -> Class R
+
+#include<iostream>
+using namespace std;
+class P{
+protected :
+double cel,fer,kel;
+};
+class Q : public P {
+public :
+double toFehrenheit(double cel)
+{
+this->cel = cel;
+return fer = (cel * 9/5) + 32;
+}
+};
+class R : public Q{
+public :
+double toKelvin(double fer)
+{
+this->fer = fer;
+return kel = (fer - 32) * 5/9 + 273.15;
+}
+};
+
+int main()
+{
+
+double cel,fer,kel;
+R r1;
+cout << "Enter temperature in Celsius: ";
+cin >> cel;
+fer = r1.toFehrenheit(cel);
+kel = r1.toKelvin(fer);
+cout << "========================================" << endl;
+cout << "Celsius \tFehrenheit\tKelvin" << endl;
+cout << "========================================" << endl;
+cout << " " << cel << " \t " << fer << " \t" << kel;
+cout << endl << "========================================";
+}
