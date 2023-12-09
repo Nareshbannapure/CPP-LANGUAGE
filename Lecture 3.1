@@ -1,0 +1,113 @@
+/*Q.1 Write a Program to create Student Record System for 5 students using Encapsulation. 
+Consider the below-mentioned attributes in the Student class:*/
+
+#include<iostream>
+using namespace std;
+
+class Std{
+	
+	private :
+		int std_id;
+		string std_name;
+		int std_age;
+		string std_course;
+		string std_city;
+		string std_email;
+		string std_clg;
+		
+	public :
+		void setData(int std_id, string std_name, int std_age, string std_course, string std_city, string std_email, string std_clg){
+			this->std_id = std_id;
+			this->std_name = std_name;
+			this->std_age = std_age;
+			this->std_course = std_course;
+			this->std_city = std_city;
+			this->std_email = std_email;
+			this->std_clg = std_clg;
+		}
+		
+		void getData(){
+			cout << " STUDENT ID :  " << std_id << endl;
+			cout << " STUDENT NAME :  " << std_name << endl;
+			cout << " STUDENT AGE :  " << std_age << endl;
+			cout << " STUDENT COURSE :  " << std_course << endl;
+			cout << " STUDENT CITY :  " << std_city << endl;
+			cout << " STUDENT EMAIL :  " << std_email << endl;
+			cout << " STUDENT CLG :  " << std_clg << endl << endl;
+		} 
+};
+		
+int main(){
+	Std std1,std2,std3,std4,std5,std6,std7;
+	
+	std1.setData(1,"Naresh",18,"FLUTTER","SURAT","naresh@gmail.com","VSNGU");
+	std2.setData(2,"keval",21,"DEVELOPMENT","Mumbai","keval@gmail.com","VSNGU");
+	std3.setData(3,"Hetal",17,"WEB DEVELOPMENT","NAVSARI","hetal@gmail.com","VSNGU");
+	std4.setData(4,"Jinay",18,"FLUTTER","vyara","jinay@gmail.com","VSNGU");
+	std5.setData(5,"parth",22,"C/C++","SURAT","parth@gmail.com","VSNGU");
+	
+	std1.getData();
+	std2.getData();
+	std3.getData();
+	std4.getData();
+	std5.getData();
+}
+
+
+/*Q.2 Write a Program to create a Customer Record System for 5 customers using Encapsulation. 
+Consider the below-mentioned attributes in the Customer structure:*/
+
+#include<iostream>
+using namespace std;
+
+class Cust{
+	
+	private :
+		int cust_id;
+		string cust_name;
+		int cust_age;
+		string cust_city;
+		string cust_mobile_number;
+		int cust_simcard_validity;
+		string cust_telecom_brand_name;
+		
+	public :
+		void setData(int cust_id, string cust_name, int cust_age, string cust_city, string cust_mobile_number, int cust_simcard_validity, string cust_telecom_brand_name){
+			this->cust_id = cust_id;
+			this->cust_name = cust_name;
+			this->cust_age = cust_age;
+			this->cust_city = cust_city;
+			this->cust_mobile_number = cust_mobile_number;
+			this->cust_simcard_validity = cust_simcard_validity;
+			this->cust_telecom_brand_name = cust_telecom_brand_name;
+		}
+		
+		void getData(){
+			cout << " CUSTOMER ID :  " << cust_id << endl;
+			cout << " CUSTOMER NAME :  " << cust_name << endl;
+			cout << " CUSTOMER AGE :  " << cust_age << endl;
+			cout << " CUSTOMER CITY :  " << cust_city << endl;
+			cout << " CUSTOMER MOBILE NUMBER :  " << cust_mobile_number << endl;
+			cout << " CUSTOMER SIMCARD VALIDITY :  " << cust_simcard_validity << endl;
+			cout << " CUSTOMER TELECOM BRAND NAME :  " << cust_telecom_brand_name << endl << endl;
+		}
+
+    
+};
+		
+int main(){
+	Cust cust1,cust2,cust3,cust4,cust5,cust6,cust7;
+	
+	cust1.setData(4,"MEHUL",34,"SURAT","1234567890",2024,"jio");
+	cust2.setData(6,"VISHNU",29,"BAORDA","2345678910",2026,"airtel");
+	cust3.setData(7,"MAHESH",31,"NAVSARI","56231479890",2027,"vi");
+	cust4.setData(5,"DINESH",38,"VAPI","4589621307",2028,"jio");
+	cust5.setData(3,"ASHVIN",39,"SURAT","4561230015",2030,"airtel");
+	
+	cust1.getData();
+	cust2.getData();
+	cust3.getData();
+	cust4.getData();
+	cust5.getData();
+	
+}
