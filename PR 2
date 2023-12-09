@@ -1,0 +1,160 @@
+//Q.1 Write a Program to make Railway Reservation System.
+
+#include<iostream>
+using namespace std;
+
+class Train
+   {
+    private :
+     	
+		int trainno;
+		string trainname;
+		string trainpp;
+		string traindes;
+		string traintime;
+		
+    public :
+    	
+		void setdata()
+			{
+				cout << "_________" << endl;
+				cout << "Enter train number : ";
+				cin >> trainno;
+				cout << "Enter train name : ";
+				cin >> trainname;
+				cout << "Enter train pickup point : " ;
+				cin >> trainpp;
+				cout << "Enter train destination : ";
+				cin >> traindes;
+				cout << "Enter train time(AM\\PM) : ";
+				cin >> traintime;
+			}
+			
+				
+		void table()
+		{
+			cout << endl << trainno << "\t" << trainname << "\t" << trainpp << "\t\t" << traindes << "\t" << traintime;
+		}
+		
+		int getdata(int n)
+		{
+		if(trainnodf==n){
+		cout << "Train number: " << trainno << endl;
+		cout << "Train name: " << trainname << endl;
+		cout << "Train pickup point: " << trainpp << endl;
+		cout << "Train destination: " << traindes << endl;
+		cout << "Train time: " << traintime << endl;
+		}
+		return 0;
+	}
+};
+
+int main()
+   {
+	int n,a;
+	Train p1[3];
+	cout << "__Enter train details__" << endl;
+	for(int i=0;i<3;i++)
+   {
+    p1[i].setdata();
+  }
+	cout << endl << endl <<"no.\tName\tPickup from\tDestination\tTime";
+	cout << endl << "__________________" << endl ;
+	
+	for(int i=0;i<3;i++)
+ {
+	p1[i].table();
+ }
+	cout << endl << "_________" << endl ;
+	cout << "Enter train number you want to see: ";
+	cin >> n;
+	cout << "_________" << endl ;
+	
+	for(int i=0;i<3;i++)
+ {
+    a=p1[i].getdata(n);
+ }
+    if(a==1)
+	{
+    cout << "\n\nData not found...";
+    }
+}
+
+
+
+
+//Q.2 Write a Program to make Supermarket Billing System.
+
+#include<iostream>
+using namespace std;
+class Sm
+{
+private :
+int itm_no;
+string itm_name;
+int itm_qty;
+double itm_price;
+double itm_dis;
+public :
+void setdata()
+{
+cout << "--------------------------" << endl;
+cout << "Enter item number: ";
+cin >> itm_no;
+cout << "Enter item name: ";
+cin >> itm_name;
+cout << "Enter item quantity(pcs): " ;
+cin >> itm_qty;
+cout << "Enter item price(rs.): ";
+cout << " Rs." ;
+cin >> itm_price;
+for(int i=0;i>=0;i++)
+{
+cout << "Enter item discount(%): ";
+cin >> itm_dis;
+if(itm_dis>=0 && itm_dis<=100)
+{
+break;
+}else
+{
+cout << "--------------------------" << endl;
+cout << "Invalid...\nPlease enter dis. between 1 to 100\n";
+cout << "--------------------------" << endl;
+}
+}
+}
+void user()
+{
+string a="admin123",b="abc@123";
+string id,pass;
+cout << "Enter your ID: ";
+cin >> id;
+cout << "Enter your password: ";
+cin >> pass;
+if(a == id && b == pass)
+{
+cout << "--------------------------" << endl;
+cout << "Login successfull..." << endl;
+cout << "--------------------------" << endl;
+}else{
+cout << "--------------------------" << endl;
+cout << "Login failed...\nPlease try again.." << endl;
+cout << "--------------------------" << endl;
+user();
+}
+}
+void table(){
+cout << endl << itm_no << "\t" << itm_name << "\t\t" << itm_qty << "\t" << itm_price
+<< "\t" << itm_dis;
+}
+int getdata(int n)
+{
+if(itm_no==n){
+cout << "Item number: " << itm_no << endl;
+cout << "Item name: " << itm_name << endl;
+cout << "Item quantity: " << itm_qty << " Pcs" << endl;
+cout << "Item price: " << itm_price << " Rs." << endl;
+cout << "Item discount: " << itm_dis << "%" << endl;
+}
+return 0;
+}
