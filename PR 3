@@ -1,0 +1,228 @@
+/*Q.3 Write a Program to read and print Employee information with the use of Multilevel inheritance.
+(as same the attached image)*/
+
+#include<iostream>
+using namespace std;
+
+class A{
+	
+	protected :
+	
+	int id;
+	double exp,salary;
+	string name,role,com_name,add,email,cont; 
+
+public :
+
+void setdataA(){
+
+cout << "Enter employee's ID: ";
+cin >> id;
+cout << "Enter employee's name: ";
+cin >> name;
+cout << "Enter employee's role: ";
+cin >> role;
+
+}
+};
+
+class B : public A{
+
+public :
+
+void setdataB(){
+
+cout << "Enter employee's salary: ";
+cin >> salary;
+cout << "Enter employee's experience: ";
+cin >> exp;
+
+}
+};
+
+class C : public B{
+
+public :
+
+void setdataC(){
+
+cout << "Enter employee's company name: ";
+cin >> com_name;
+cout << "Enter employee's address: ";
+cin >> add;
+
+}
+
+void getdataC(){
+
+cout << "Employee's ID: " << id << endl;
+cout << "Employee's name: " << name << endl;
+cout << "Employee's role: " << role << endl;
+cout << "Employee's salary: " << salary << "Rs." << endl;
+
+}
+};
+
+class D : public C{
+
+public :
+
+void setdataD(){
+
+cout << "Enter employee's email: ";
+cin >> email;
+cout << "Enter employee's contact nummber: ";
+cin >> cont;
+
+}
+
+void getdataD(){
+
+cout << "Employee's experience: " << exp << " Years" << endl;
+cout << "Employee's company name: " << com_name << endl;
+cout << "Employee's address: " << add << endl;
+cout << "Employee's email: " << email << endl;
+cout << "Employee's contact nummber: " << cont << endl;
+
+}
+};
+
+
+
+int main(){
+
+D d;
+cout << "============================================" << endl;
+cout << "        Enter employee's details" << endl;
+cout << "============================================" << endl;
+
+d.setdataA();
+d.setdataB();
+d.setdataC();
+d.setdataD();
+
+cout << endl << endl << "============================================" << endl;
+cout << "           Employee's details" << endl;
+cout << "============================================" << endl;
+
+d.getdataC();
+d.getdataD();
+
+}
+
+
+/*Q.2 Write a Program to demonstrate an example of hierarchical inheritance to 
+get the square and cube of a number.*/
+
+#include<iostream>
+using namespace std;
+
+class A{
+
+protected :
+double n; 
+
+public :
+
+    A()
+    {   
+     cout << "Enter number:  ";
+     cin >> n;
+	}
+};
+
+class Square : public A
+	{
+	
+	public :
+	
+	Square()
+	{
+	cout << "Square of " << n << " is " << n*n << endl;
+	}
+};
+
+class Cube : public A
+	{
+	
+	public :
+	
+	Cube()
+	{	
+	cout << "Cube of " << n << " is " << n*n*n;
+	}
+};
+
+int main()
+{
+
+Square s;
+Cube c;
+
+}
+
+
+/*Q.1 Write a Program that defines a shape class with a constructor that gives value to width and height. Then define two sub-classes triangle and rectangle, that calculate the area of the shape area (). In the main, define two objects a triangle and a rectangle, 
+and then call the area() function using these two objects.*/
+
+#include<iostream>
+using namespace std;
+
+class Shape{
+protected :
+
+double width,height; 
+
+public :
+
+Shape()
+	{
+	cout << "========================================" << endl;
+	cout << "Enter width length:  ";
+	cin >> width;
+	cout << "Enter height length: ";
+	cin >> height;
+	cout << "========================================" << endl;
+	}
+};
+
+class Triangle : public Shape{
+	public :
+	
+	double area()
+	{	
+	return (width*height)/2;
+	}
+};
+
+class Rectangle : public Shape{
+	public :
+	double area()
+	{
+	return (width*height);
+	}
+};
+
+
+int main(){
+	double at,ar;
+	
+	cout << endl << endl << "========================================" << endl;
+	cout << "       Enter details of Triangle" << endl;
+	Triangle t;
+	
+	at = t.area();
+	
+	cout << endl << "Area of Triangle:  " << at << endl << endl;
+	
+	cout << endl << "========================================" << endl;
+	cout << "      Enter details of Rectangle" << endl;
+	
+	Rectangle r;
+	
+	ar = r.area();
+	
+	cout << endl<< "Area of Rectangle: " << ar << endl << endl;
+	cout << "========================================" << endl;
+	
+}
