@@ -1,0 +1,247 @@
+/*Q.1 Write a Program to print the rate of interest of different banks using hierarchical inheritance:
+- Class RBI -> Class SBI
+- Class RBI -> Class BOB
+- Class RBI -> Class ICICI
+- inherit rate attribute and getROI() method in all child
+classes*/
+
+#include<iostream>
+using namespace std;
+
+class RBI
+{
+protected :
+	
+	double p,r,t,sbi,bob,icici;;
+	
+	public :
+	
+	static void table()
+	{
+	cout << "==========================================================" << endl;
+    cout << "Principal\tRate(%)\t\tTime(Year)\tRate of" << endl;
+    cout << " amount  \t\t\t\t\tinterest" << endl;
+    cout << "----------------------------------------------------------" << endl;
+	}
+	
+};
+
+class SBI : public RBI
+{
+ public :
+ 
+ void setdata()
+	{
+	cout << "==========================================================" << endl;	
+	cout << "                Enter details for SBI bank" << endl;
+	cout << "==========================================================" << endl;	
+	cout << "Enter Principal amount: ";
+	cin >> p;
+	cout << "Enter Rate(%): ";
+	cin >> r;
+	cout << "Enter Time(Year): ";
+	cin >> t;
+	}
+
+	double getROI()
+	{
+	
+	sbi = (p*r*t)/100;
+	
+	cout << p << "Rs\t "  << r << "%\t\t  " << t << "Year \t  " << sbi << "Rs";
+	
+	}
+
+};
+class BOB : public RBI
+{
+
+public :
+
+void setdata()
+	{
+	cout << "==========================================================" << endl;	
+	cout << "                Enter details for BOB bank" << endl;
+	cout << "==========================================================" << endl;	
+	cout << "Enter Principal amount: ";
+	cin >> p;
+	cout << "Enter Rate(%): ";
+	cin >> r;
+	cout << "Enter Time(Year): ";
+	cin >> t;
+	}
+
+	double getROI()
+	{
+	
+	bob = (p*r*t)/100;
+	
+	cout << p << "Rs\t "  << r << "%\t\t  " << t << "Year \t  " << bob << "Rs";
+	
+	}
+	
+	
+
+};
+
+class ICICI : public RBI
+{
+
+public :
+
+void setdata()
+	{
+	cout << "==========================================================" << endl;	
+	cout << "               Enter details for ICICI bank" << endl;
+	cout << "==========================================================" << endl;	
+	cout << "Enter Principal amount: ";
+	cin >> p;
+	cout << "Enter Rate(%): ";
+	cin >> r;
+	cout << "Enter Time(Year): ";
+	cin >> t;
+	}
+
+	double getROI()
+	{
+	
+	icici = (p*r*t)/100;
+	
+	cout << p << "Rs\t "  << r << "%\t\t  " << t << "Year \t  " << icici << "Rs";
+	
+	}
+
+};
+
+int main()
+{
+
+
+
+SBI s1;
+BOB b1;
+ICICI ic1;
+
+s1.setdata();
+b1.setdata();
+ic1.setdata();
+
+cout << endl << endl << "==========================================================" << endl;
+cout << "                   Details of SBI bank" << endl;
+RBI::table();
+s1.getROI();
+cout << endl << "==========================================================" << endl;
+
+cout << endl << endl << "==========================================================" << endl;
+cout << "                   Details of BOB bank" << endl;
+RBI::table();
+b1.getROI();
+cout << endl << "==========================================================" << endl;
+
+cout << endl << endl << "==========================================================" << endl;
+cout << "                  Details of ICICI bank" << endl;
+RBI::table();
+ic1.getROI();
+cout << endl << "==========================================================" << endl;
+
+cout  << endl << "----------------------------------------------------------";
+
+}
+
+
+
+
+
+
+/*Q.2 Write a Program to perform four different numbers’ sum by inheriting constructors
+ in hybrid inheritance.*/
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+protected :
+	
+	int a;
+	
+public :
+	
+	void setdataA()
+	{
+	cout << "Enter value of a: ";
+    cin >> a;
+	}
+	
+};
+
+class B : public A
+{
+	
+protected :
+	
+	int b;
+
+ public :
+ 
+ void setdataB()
+	{
+	cout << "Enter value of b: ";
+    cin >> b;
+	}
+	
+};
+class C : public A
+{
+	
+protected :
+	
+	int c;
+
+public :
+
+void setdataC()
+	{
+	cout << "Enter value of c: ";
+    cin >> c;
+	}
+	
+};
+
+class D : public B,public C
+{
+	
+protected :
+	
+	int d;
+
+
+public :
+
+void setdataD()
+	{
+	cout << "Enter value of d: ";
+    cin >> d;
+	}
+	
+void getdata()
+{
+cout << "Sum of " << B::a << " + " << b << " + " << c << " + " << d << " = " << B::a + b + c + d; 
+}
+	
+};
+
+int main()
+{
+
+
+
+D d;
+
+d.B::setdataA();
+d.setdataB();
+d.setdataC();
+d.setdataD();
+d.getdata();
+
+}
