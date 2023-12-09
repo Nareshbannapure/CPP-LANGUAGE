@@ -1,0 +1,126 @@
+//QUESTION : 1
+#include<iostream>
+using namespace std;
+
+class Employ{
+	    
+	    public :
+		int Emp_id;
+		string Emp_name;
+		int Emp_age;
+		string Emp_role;
+		double Emp_salary;
+		string Emp_city;
+		double Emp_exp;
+		string Emp_company_name;
+		
+		void setdata()
+		{
+			cout << "Enter emp id : ";
+			cin >> Emp_id;
+			cout << "Enter emp name : ";
+			cin >> Emp_name;
+			cout << "Enter emp age : ";
+			cin >> Emp_age;
+			cout << "Enter emp role : ";
+			cin >> Emp_role;
+			cout << "Enter emp salary : ";
+			cin >> Emp_salary;
+			cout << "Enter emp city : ";
+			cin >> Emp_city;
+			cout << "Enter emp exp : ";
+			cin >> Emp_exp;
+			cout << "Enter emp company name : ";
+			cin >> Emp_company_name;
+		} 
+		
+		void printdata()
+		{
+			cout << endl << endl << "Emp_id :" << Emp_id << endl;
+			cout << "Emp_name :" << Emp_name<< endl;
+			cout << "Emp_age :" << Emp_age<< endl;
+			cout << "Emp_role :" << Emp_role << endl;
+			cout << "Emp_salary :" <<Emp_salary << endl;
+			cout << "Emp_city :" << Emp_city << endl;
+			cout << "Emp_exp :" << Emp_exp << endl;
+			cout << "Emp_company name:" << Emp_company_name << endl;
+		}
+};
+
+int main()
+{
+	Employ emp1,emp2,emp3,emp4,emp5;
+	
+	emp1.setdata();
+	emp2.setdata();
+	emp3.setdata();
+	emp4.setdata();
+	emp5.setdata();
+	
+	
+	emp1.printdata();
+	emp2.printdata();
+	emp3.printdata();
+	emp4.printdata();
+	emp5.printdata();
+	
+}
+
+
+//QUESTION : 2
+#include<iostream>
+using namespace std;
+
+class Car{
+	    
+	    public :
+		int car_id;
+		string car_company_name;
+		string car_color;
+		string car_model;
+		int car_release_year;
+		
+		void setdata()
+		{
+			cout << "Enter car id: ";
+			cin >> car_id;
+			cout << "Enter car company name : ";
+			cin >> car_company_name;
+			cout << "Enter car color : ";
+			cin >> car_color;
+			cout << "Enter emp model : ";
+			cin >> car_model;
+			cout << "Enter car release year : ";
+			cin >> car_release_year;
+		
+		} 
+		
+		void printdata()
+		{
+			cout << endl << endl << "car_id :" << car_id << endl;
+			cout << "car_company_name :" << car_company_name<< endl;
+			cout << "car_color :" << car_color<< endl;
+			cout << "car_model :" << car_model<< endl;
+			cout << "car_release_year :" <<car_release_year << endl;
+		
+		}
+};
+
+int main()
+{
+	Car car1,car2,car3,car4,car5;
+	
+	car1.setdata();
+	car2.setdata();
+	car3.setdata();
+	car4.setdata();
+	
+	
+	
+	car1.printdata();
+	car2.printdata();
+	car3.printdata();
+	car4.printdata();
+	
+	
+}
