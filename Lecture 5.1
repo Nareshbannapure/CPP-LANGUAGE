@@ -1,0 +1,89 @@
+/Q.2 Write a Program to implement method overriding by following the below-mentioned criteria:/
+
+#include<iostream>
+using namespace std;
+
+class Crickets{
+
+};
+
+class T20match : Crickets
+
+
+public :
+
+void getTotalOvers(int x){
+	
+	cout << "T20 Cricket overs : " << x;
+	
+}
+
+};
+
+class Testmatch : Crickets{
+
+public :
+
+void getTotalOvers(int y){
+	
+	cout << "Test Cricket overs: " << y;
+	
+}
+
+};
+
+int main(){
+
+Testmatch z;
+int x,y;
+
+cout << "Enter T20 Cricket Overs: ";
+cin >> x;
+
+cout << "Enter Test Cricket Overs: ";
+cin >> y;
+
+z.getTotalOvers(x);
+z.getTotalOvers(y);
+
+}
+
+
+/Q.1 Write a Program to perform all basic arithmetic. operations such as +, -, *, and / operations by implementing method overloading using 2 classes./
+
+#include<iostream>
+using namespace std;
+
+class Maths{	
+	public :
+		
+		void calculate(double a,double b)
+		{
+			cout << " Division : " << a << "/" << b << "=" << a/b << endl;
+		}
+		
+		void calculate(double a, double b, double c)
+		{
+			cout << " Subtraction : " << a  << "-" << b << "-" << c << "=" << a-b-c << endl;
+		}
+		
+		void calculate(int a, int b, int c, int d)
+		{
+			cout << " Multiplication : " << a << "" << b << "" << c << "*" << d << "=" << a*b*c*d << endl;
+		}
+		
+		void calculate(int a, int b, int c, int d, int e)
+		{
+			cout << " Addition : " << a << "+" << b << "+" << c << "+" << d << "+" << e << "=" << a+b+c+d+e << endl;
+		}
+};
+
+int main()
+{
+	Maths m1;
+	
+	m1.calculate(10,20);
+	m1.calculate(10,20,30);
+	m1.calculate(10,20,30,40);
+	m1.calculate(10,20,30,40,50);
+}
