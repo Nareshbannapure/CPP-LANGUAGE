@@ -1,0 +1,142 @@
+/Q.1 Write a Program to get and display N numbers of Diamond companies information using encapsulation and use of Parameterised Constructor by including below/
+
+#include<iostream>
+using namespace std;
+
+class Company{
+	
+	private :
+		int cmp_id;
+		string cmp_name;
+		int staff_qty;
+		double cmp_rev;
+		int cmp_imp_dia;
+		int cmp_exp_dia;
+		string cmp_ceo;
+		
+	public :
+			
+		Company(int cmp_id,string cmp_name,int staff_qty,double cmp_revint,int cmp_imp_dia,int cmp_exp_dia,string cmp_ceo)
+		{
+			this->cmp_id = cmp_id;
+			this->cmp_name = cmp_name;
+			this->staff_qty = staff_qty;
+			this->cmp_rev = cmp_rev;
+			this->cmp_imp_dia = cmp_imp_dia;
+			this->cmp_exp_dia = cmp_exp_dia;
+			this->cmp_ceo = cmp_ceo;
+		}
+		
+	void getData(){
+		cout << "Company ID : " << cmp_id << endl;
+		cout << "Company NAME : " << cmp_name << endl;
+		cout << "Staff Quntity : " << staff_qty << endl;
+		cout << "Company Revenue : " << cmp_rev << "\tPer Year"<< endl;
+		cout << "Company Import Diamond : " << cmp_imp_dia << endl;
+		cout << "Company Export Diamond : " << cmp_exp_dia << endl;
+		cout << "Company CEO NAME : " << cmp_ceo << endl;
+	} 
+};
+
+int main() {
+	int n;
+	
+	    int cmp_id;
+		string cmp_name;
+		int staff_qty;
+		double cmp_rev;
+		int cmp_imp_dia;
+		int cmp_exp_dia;
+		string cmp_ceo;
+	
+	cout << "Enter Diamond Companies : ";
+	cin >> n;
+	
+	for(int i=0;i<n;i++)
+	{
+	cout << "Enter Diamond Companies ID :";
+	cin >> cmp_id;
+	cout << "Enter Diamond Companies NAME :";
+	cin >> cmp_name;
+	cout << "Enter Diamond Companies Staff Quntity :";
+	cin >> staff_qty;
+	cout << "Enter Diamond Companies Revenue :";
+	cin >> cmp_rev;
+	cout << "Enter Diamond Companies Import Diamond :";
+	cin >> cmp_imp_dia;
+	cout << "Enter Diamond Companies Export Diamond :";
+	cin >> cmp_exp_dia;
+	cout << "Enter Diamond Companies CEO NAME :";
+	cin >> cmp_ceo;
+	
+	Company c1(cmp_id,cmp_name,staff_qty,cmp_rev,cmp_imp_dia,cmp_exp_dia,cmp_ceo);
+    c1.getData();
+    cout << endl;
+    }
+ 
+}
+
+/Q.2 Write a Program to get and display N numbers of Fast Food cafe information using encapsulation and the use of a Default constructor by including the below-mentioned attributes:/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class cafe{
+	private:
+	int cafe_id;
+	string cafe_name;
+	string cafe_type;
+	string cafe_rating;
+	string location;
+	int cafe_esta_year;
+	int staff_qnt;
+	
+	public:
+		cafe(){
+			cout<<"Fast Food Cafe Information";
+			cout<<"____________";
+		}
+		void setData(){
+			cout<<"\nenter Cafe Id:\t";
+			cin>>cafe_id;
+			cout<<"enter Cafe Name:\t";
+			cin>>cafe_name;
+			cout<<"enter Cafe Cafe type:\t";
+			cin>>cafe_type;
+			cout<<"enter Cafe rating:\t";
+			cin>>cafe_rating;
+			cout<<"enter Cafe Location:\t";
+			cin>>location;
+			cout<<"enter Cafe cafe_esta_year:\t";
+			cin>>cafe_esta_year;
+			cout<<"enter Cafe staff quntity:\t";
+			cin>>staff_qnt;
+		}
+		void getData(){
+			cout<<cafe_id<<"\t"<<cafe_name<<"\t"<<"\t"<<cafe_type<<"\t"<<"\t"<<cafe_rating<<"\t"<<"\t"
+			<<location<<"\t"<<"\t"<<cafe_esta_year<<"\t"<<"\t"<<staff_qnt<<endl;
+		}
+		void header(){
+			cout<<"Cafe_Id"<<"\t"<<"Cafe_Name"<<"\t"<<"Cafe_Type"<<"\t"
+				<<"Cafe_Rating"<<"\t"<<"Cafe_Location"<<"\t"<<"cafeYear"<<"\t"<<"Staffqnt"<<endl;
+		}
+};
+int main(){
+	int n;
+	cout<<"\nenter Number of Cafe:\t";
+	cin>>n;
+	
+	
+	cafe c[n];
+	
+	for(int i=0;i<n;i++){
+		c[i].setData();
+		
+	}
+	c[0].header();
+	for(int i=0;i<n;i++){
+		c[i].getData();
+	}
+
+}
