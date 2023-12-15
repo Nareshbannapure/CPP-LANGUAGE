@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class Shape{
+public:
+ 
+    virtual void draw() {
+        cout << endl << "Drawing a Shape." << endl;
+    }
+};
+
+class Circle : public Shape {
+public:
+   
+    void draw() override{
+        cout << "Drawing a Circle." << endl;
+    }
+};
+
+int main() {
+ 
+    Shape shape;
+    shape.draw();
+
+    Circle circle;
+    circle.draw();
+
+    Shape* shapePtr = &circle;
+    shapePtr->draw();
+
+    return 0;
+}
+
