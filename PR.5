@@ -1,3 +1,5 @@
+Question : 1
+
 #include <iostream>
 using namespace std;
 
@@ -35,3 +37,47 @@ int main() {
     return 0;
 }
 
+
+Question : 2
+
+include <iostream>
+using namespace std;
+
+class AgeException {
+public:
+    AgeException(const char* message) : message(message) {}
+
+    const char* what() const {
+        return message;
+    }
+
+private:
+    const char* message;
+};
+
+class VotingEligibility {
+public:
+    void checkEligibility(int age) {
+        if (age < 18) {
+            throw AgeException("You are not eligible to vote.");
+        } else {
+            cout << "You are eligible to vote." << endl;
+        }
+    }
+};
+
+int main() {
+    try {
+        VotingEligibility eligibilityChecker;
+        
+        int userAge;
+        cout << "Enter your age: ";
+        cin >> userAge;
+
+        eligibilityChecker.checkEligibility(userAge);
+    } catch (const AgeException& e) {
+        cerr << "Exception: " << e.what() << endl;
+    }
+
+    return 0;
+}
